@@ -1,0 +1,309 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9 url('https://i.pravatar.cc/1000?img=50') no-repeat center center scroll;
+    background-size: cover;
+    color: #333;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    pointer-events: none;
+    z-index: -1;
+}
+
+header {
+    background: linear-gradient(90deg, #004080, #0066cc);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer {
+    background: linear-gradient(90deg, #004080, #0066cc);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Timeline Styles */
+.timeline {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    padding-left: 0;
+    border-left: none;
+    border-bottom: 3px solid #004080;
+    padding-bottom: 1rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #004080 #f9f9f9;
+    justify-content: center; /* Center timeline items horizontally */
+}
+
+.timeline::-webkit-scrollbar {
+    height: 8px;
+}
+
+.timeline::-webkit-scrollbar-track {
+    background: #f9f9f9;
+}
+
+.timeline::-webkit-scrollbar-thumb {
+    background-color: #004080;
+    border-radius: 4px;
+}
+
+.timeline-item {
+    margin-bottom: 0;
+    position: relative;
+    min-width: 150px;
+    padding-left: 0;
+    border-left: none;
+    border-bottom: 3px solid #004080;
+    padding-bottom: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.timeline-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    background: white;
+    border: 3px solid #004080;
+    border-radius: 50%;
+}
+
+/* Visi Misi Styles */
+.visi-misi-container {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.visi, .misi {
+    background: #a3c4f3;
+    color: #003366;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.visi:hover, .misi:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.visi img, .misi img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Alamat Kantor Styles */
+.alamat-container {
+    text-align: center;
+}
+
+.alamat-container iframe {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Slider Styles */
+.slider {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px; /* Added gap between images */
+    justify-content: center; /* Center images with space */
+}
+
+.slides img {
+    width: 60%;
+    flex-shrink: 0;
+    border-radius: 8px;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Pyramid Diagram Styles */
+.pyramid-diagram {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.level {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.level-1 .person {
+    width: 200px;
+}
+
+.level-2 .person {
+    width: 180px;
+}
+
+.level-3 .person {
+    width: 160px;
+}
+
+.person {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.person:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.person img {
+    width: 100%;
+    border-radius: 12px; /* Changed from circle to rounded rectangle */
+    border: 3px solid #004080;
+}
+
+.person p {
+    margin-top: 0.5rem;
+    font-weight: 600;
+}
+
+/* Media Sosial Styles */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.social-media a img {
+    width: 40px;
+    height: 40px;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.social-media a:hover img {
+    filter: none;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(90deg, #004080, #0066cc);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 3rem;
+}
+
+/* Center titles of main sections */
+#sejarah h2,
+#visi-misi h2,
+#alamat h2,
+#aktifitas h2,
+#pengurus h2,
+#media-sosial h2 {
+    text-align: center;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+}
+
+#sejarah h2:hover,
+#visi-misi h2:hover,
+#alamat h2:hover,
+#aktifitas h2:hover,
+#pengurus h2:hover,
+#media-sosial h2:hover {
+    color: #004080;
+    transform: scale(1.1);
+}
